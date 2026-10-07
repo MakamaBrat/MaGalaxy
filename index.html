@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy on Fire 2</title>
+<style>html,body{height:100%;margin:0;background:#000;color:#ccc;font:16px sans-serif;display:flex;align-items:center;justify-content:center}</style>
+</head>
+<body>
+<p>Загрузка…</p>
+<script>
+// Сенсорные устройства получают экранную клавиатуру (параметр mobile=1)
+const touch = matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+const p = new URLSearchParams(location.search);
+p.set('jar', 'game.jar');
+if (touch && !p.has('mobile')) p.set('mobile', '1');
+location.replace('run.html?' + p.toString());
+</script>
+</body>
+</html>
